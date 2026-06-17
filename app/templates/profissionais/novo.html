@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Novo Profissional</h2>
+<form method="POST">
+    <div class="mb-3"><label>Nome</label><input type="text" name="nome" class="form-control" required></div>
+    <div class="mb-3"><label>Especialidade</label><input type="text" name="especialidade" class="form-control"></div>
+    <div class="mb-3"><label>Telefone</label><input type="text" name="telefone" class="form-control"></div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+{% endblock %}

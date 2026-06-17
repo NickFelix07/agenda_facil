@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Profissionais</h2>
+<a href="{{ url_for('profissionais.novo') }}" class="btn btn-primary mb-3">Novo Profissional</a>
+<table class="table">
+    <thead><tr><th>Nome</th><th>Especialidade</th><th>Telefone</th></tr></thead>
+    <tbody>
+        {% for p in profissionais %}
+        <tr><td>{{ p.nome }}</td><td>{{ p.especialidade }}</td><td>{{ p.telefone }}</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

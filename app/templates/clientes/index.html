@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Clientes</h2>
+<a href="{{ url_for('clientes.novo') }}" class="btn btn-primary mb-3">Novo Cliente</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Email</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cliente in clientes %}
+        <tr>
+            <td>{{ cliente.nome }}</td>
+            <td>{{ cliente.telefone }}</td>
+            <td>{{ cliente.email }}</td>
+            <td>Ver Histórico</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

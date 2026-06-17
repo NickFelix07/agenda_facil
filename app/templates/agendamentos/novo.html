@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Novo Agendamento</h2>
+<form method="POST">
+    <div class="mb-3">
+        <label>Data e Hora</label>
+        <input type="datetime-local" name="data_horario" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Cliente</label>
+        <select name="cliente_id" class="form-control" required>
+            {% for c in clientes %}
+            <option value="{{ c.id }}">{{ c.nome }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="mb-3">
+        <label>Profissional</label>
+        <select name="profissional_id" class="form-control" required>
+            {% for p in profissionais %}
+            <option value="{{ p.id }}">{{ p.nome }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="mb-3">
+        <label>Serviço</label>
+        <select name="servico_id" class="form-control" required>
+            {% for s in servicos %}
+            <option value="{{ s.id }}">{{ s.nome }} - R$ {{ s.preco }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Confirmar Agendamento</button>
+</form>
+{% endblock %}

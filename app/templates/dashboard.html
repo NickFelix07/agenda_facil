@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="mb-4">Bem-vindo ao AgendaFácil</h1>
+
+<div class="row">
+    <div class="col-md-3">
+        <a href="{{ url_for('clientes.index') }}" class="btn btn-success w-100 mb-3">Gerenciar Clientes</a>
+    </div>
+    <div class="col-md-3">
+        <a href="{{ url_for('servicos.index') }}" class="btn btn-success w-100 mb-3">Gerenciar Serviços</a>
+    </div>
+    <div class="col-md-3">
+        <a href="{{ url_for('profissionais.index') }}" class="btn btn-success w-100 mb-3">Gerenciar Profissionais</a>
+    </div>
+    <div class="col-md-3">
+        <a href="{{ url_for('agendamentos.index') }}" class="btn btn-primary w-100 mb-3">Ver Agendamentos</a>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-12">
+        <a href="{{ url_for('agendamentos.novo') }}" class="btn btn-lg btn-warning w-100">+ Novo Agendamento</a>
+    </div>
+</div>
+{% endblock %}

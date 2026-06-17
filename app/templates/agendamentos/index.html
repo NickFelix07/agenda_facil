@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Agendamentos</h2>
+<a href="{{ url_for('agendamentos.novo') }}" class="btn btn-primary mb-3">Novo Agendamento</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Data/Hora</th>
+            <th>Cliente</th>
+            <th>Profissional</th>
+            <th>Serviço</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ag in agendamentos %}
+        <tr>
+            <td>{{ ag.data_horario.strftime('%d/%m/%Y %H:%M') }}</td>
+            <td>{{ ag.cliente.nome }}</td>
+            <td>{{ ag.profissional.nome }}</td>
+            <td>{{ ag.servico.nome }}</td>
+            <td>{{ ag.status }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

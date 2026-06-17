@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Serviços</h2>
+<a href="{{ url_for('servicos.novo') }}" class="btn btn-primary mb-3">Novo Serviço</a>
+<table class="table">
+    <thead><tr><th>Nome</th><th>Preço</th><th>Duração</th></tr></thead>
+    <tbody>
+        {% for s in servicos %}
+        <tr><td>{{ s.nome }}</td><td>R$ {{ s.preco }}</td><td>{{ s.duracao_minutos }} min</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
