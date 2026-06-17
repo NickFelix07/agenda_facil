@@ -23,5 +23,3 @@
 - Agendamentos com validação básica
 - Dashboard intuitivo
 - Interface responsiva com Bootstrap
-
-Perfeito para Projeto Integrador UNISA!
